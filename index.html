@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字冒險遊戲</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 主遊戲區域 -->
+        <div class="game-container">
+            <!-- 圖片顯示區 -->
+            <div id="scene-image" class="scene-image hidden">
+                <img id="current-image" src="" alt="場景圖片">
+            </div>
+
+            <!-- 文字顯示區 -->
+            <div id="text-display" class="text-display">
+                <div id="story-text" class="story-text"></div>
+            </div>
+
+            <!-- 選項區域 -->
+            <div id="choices-container" class="choices-container"></div>
+
+            <!-- 載入中指示器 -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>AI 正在思考...</p>
+            </div>
+        </div>
+
+        <!-- 側邊欄 -->
+        <div class="sidebar">
+            <!-- Ollama 設定 -->
+            <div class="settings-panel">
+                <h3>LLM 設定</h3>
+                <div class="setting-item">
+                    <label for="ollama-url">Ollama URL:</label>
+                    <input type="text" id="ollama-url" value="http://localhost:11434" placeholder="http://localhost:11434">
+                </div>
+                <div class="setting-item">
+                    <label for="model-name">模型名稱:</label>
+                    <input type="text" id="model-name" value="llama2" placeholder="llama2">
+                </div>
+                <button id="test-connection" class="btn btn-secondary">測試連線</button>
+                <div id="connection-status" class="status-message"></div>
+            </div>
+
+            <!-- 成就系統 -->
+            <div class="achievements-panel">
+                <h3>成就 <span id="achievement-count">0/0</span></h3>
+                <div id="achievements-list" class="achievements-list"></div>
+            </div>
+
+            <!-- 遊戲控制 -->
+            <div class="controls-panel">
+                <button id="new-game" class="btn btn-primary">新遊戲</button>
+                <button id="save-game" class="btn btn-secondary">儲存遊戲</button>
+                <button id="load-game" class="btn btn-secondary">讀取遊戲</button>
+                <button id="reset-game" class="btn btn-danger">重置遊戲</button>
+            </div>
+
+            <!-- 遊戲統計 -->
+            <div class="stats-panel">
+                <h3>遊戲統計</h3>
+                <div id="game-stats">
+                    <p>對話輪數: <span id="turn-count">0</span></p>
+                    <p>選擇次數: <span id="choice-count">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 載入所有 JavaScript 模組 -->
+    <script src="js/storage.js"></script>
+    <script src="js/llm.js"></script>
+    <script src="js/achievement.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

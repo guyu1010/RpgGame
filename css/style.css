@@ -1,0 +1,312 @@
+/* 基礎樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+    height: calc(100vh - 40px);
+}
+
+/* 主遊戲區域 */
+.game-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+/* 場景圖片 */
+.scene-image {
+    width: 100%;
+    max-height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.scene-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scene-image.hidden {
+    display: none;
+}
+
+/* 文字顯示區 */
+.text-display {
+    flex: 1;
+    min-height: 200px;
+}
+
+.story-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2c3e50;
+    white-space: pre-wrap;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 選項區域 */
+.choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.choice-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.choice-button:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.choice-button:active {
+    transform: scale(0.98);
+}
+
+/* 載入中 */
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 側邊欄 */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+.sidebar > div {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 8px;
+}
+
+/* 設定面板 */
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.setting-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.status-message {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.status-message.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-message.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* 成就列表 */
+.achievements-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.achievement-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    background: #f8f9fa;
+    border-left: 4px solid #ddd;
+}
+
+.achievement-item.unlocked {
+    background: #d4edda;
+    border-left-color: #28a745;
+}
+
+.achievement-item .achievement-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.achievement-item .achievement-desc {
+    font-size: 12px;
+    color: #666;
+}
+
+.achievement-item .achievement-status {
+    font-size: 11px;
+    color: #999;
+    margin-top: 3px;
+}
+
+/* 按鈕 */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* 統計面板 */
+.stats-panel p {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.stats-panel span {
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* 響應式設計 */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sidebar {
+        order: 2;
+    }
+}
+
+/* 滾動條樣式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #764ba2;
+}
