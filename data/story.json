@@ -1,0 +1,110 @@
+{
+  "worldSetting": "這是一個充滿魔法與科技交織的奇幻世界。古老的魔法遺跡散布在現代都市之間，人們既使用手機也會施展咒語。在這個世界中，存在著神秘的「虛空裂縫」，連接著不同的時空維度。",
+
+  "tone": "神秘、冒險、略帶幽默",
+
+  "plotGuidelines": "玩家扮演一位剛覺醒魔法能力的普通人，開始探索這個世界的秘密。隨著冒險的深入，會逐漸揭開虛空裂縫背後的真相，並面臨影響世界命運的重大抉擇。",
+
+  "characters": [
+    {
+      "name": "艾莉絲",
+      "role": "神秘的魔法導師",
+      "personality": "聰明、機智、有些古怪，喜歡用謎語說話",
+      "background": "一位活了數百年的魔法師，守護著這個世界的平衡",
+      "goals": "尋找能夠封印虛空裂縫的「選中之人」",
+      "relationships": "對玩家抱有期待，但也隱藏著某些秘密"
+    },
+    {
+      "name": "凱文",
+      "role": "科技天才駭客",
+      "personality": "樂觀、好奇、有正義感，但有時過於衝動",
+      "background": "從小在貧民窟長大，靠自學成為頂尖駭客",
+      "goals": "揭露大企業對魔法科技的壟斷",
+      "relationships": "與玩家成為好友，提供技術支援"
+    },
+    {
+      "name": "暗影議會",
+      "role": "神秘的反派組織",
+      "personality": "冷酷、計謀深遠、目標不明",
+      "background": "操縱著世界各地的虛空裂縫，似乎在策劃某個宏大的計畫",
+      "goals": "未知（隨著劇情逐漸揭曉）",
+      "relationships": "與玩家敵對，但似乎對玩家的能力很感興趣"
+    }
+  ],
+
+  "scenes": [
+    {
+      "id": "awakening",
+      "name": "覺醒",
+      "keywords": ["覺醒", "魔法", "能力", "光芒", "力量"],
+      "image": "images/awakening.jpg",
+      "description": "玩家第一次覺醒魔法能力的場景"
+    },
+    {
+      "id": "city_night",
+      "name": "都市夜景",
+      "keywords": ["城市", "夜晚", "霓虹", "街道", "高樓"],
+      "image": "images/city_night.jpg",
+      "description": "繁華的現代魔法都市夜景"
+    },
+    {
+      "id": "void_rift",
+      "name": "虛空裂縫",
+      "keywords": ["裂縫", "虛空", "次元", "能量", "漩渦"],
+      "image": "images/void_rift.jpg",
+      "description": "神秘的虛空裂縫出現"
+    },
+    {
+      "id": "magic_lab",
+      "name": "魔法實驗室",
+      "keywords": ["實驗室", "魔法", "研究", "設備", "儀器"],
+      "image": "images/magic_lab.jpg",
+      "description": "艾莉絲的秘密魔法實驗室"
+    },
+    {
+      "id": "battle",
+      "name": "戰鬥",
+      "keywords": ["戰鬥", "對決", "敵人", "攻擊", "防禦"],
+      "image": "images/battle.jpg",
+      "description": "激烈的魔法戰鬥場景"
+    }
+  ],
+
+  "narrativeRules": {
+    "perspective": "second_person",
+    "tense": "present",
+    "lengthPerResponse": "150-250字",
+    "choicesPerTurn": 3,
+    "styleNotes": [
+      "使用生動的感官描述（視覺、聽覺、觸覺等）",
+      "保持懸念，不要一次透露太多資訊",
+      "根據玩家的選擇調整劇情走向",
+      "適時加入幽默元素緩和緊張氣氛",
+      "重要場景使用更詳細的描述"
+    ]
+  },
+
+  "gameplayElements": {
+    "magicSystem": "玩家可以學習和使用各種魔法，包括元素魔法、空間魔法、時間魔法等",
+    "technologyIntegration": "科技與魔法可以結合使用，創造獨特的效果",
+    "consequenceSystem": "玩家的選擇會影響角色關係和劇情走向",
+    "explorationRewards": "仔細探索會發現隱藏線索和秘密"
+  },
+
+  "_notes": {
+    "使用說明": "這是一個示例故事設定檔案，你可以根據自己的需求完全替換所有內容。",
+    "修改建議": [
+      "worldSetting: 修改為你的世界觀設定",
+      "characters: 添加或修改角色，包括性格、背景、目標等",
+      "scenes: 定義關鍵場景和對應的圖片（需將圖片放在 images 資料夾）",
+      "narrativeRules: 調整敘事風格和規則",
+      "所有欄位都可以自由修改，LLM 會根據這些設定生成故事"
+    ],
+    "提示詞技巧": [
+      "越詳細的設定，LLM 生成的內容越符合你的期望",
+      "可以添加具體的例子來引導 LLM 的風格",
+      "角色的性格描述會影響他們在故事中的行為",
+      "plotGuidelines 可以設定主線劇情的大方向"
+    ]
+  }
+}

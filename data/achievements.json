@@ -1,0 +1,124 @@
+{
+  "achievements": [
+    {
+      "id": "first_step",
+      "name": "第一步",
+      "description": "完成第一個對話回合",
+      "condition": {
+        "type": "counter",
+        "key": "turnCount",
+        "value": 1,
+        "operator": "gte"
+      }
+    },
+    {
+      "id": "explorer",
+      "name": "探索者",
+      "description": "做出 10 次選擇",
+      "condition": {
+        "type": "counter",
+        "key": "choiceCount",
+        "value": 10,
+        "operator": "gte"
+      }
+    },
+    {
+      "id": "veteran",
+      "name": "老手",
+      "description": "做出 50 次選擇",
+      "condition": {
+        "type": "counter",
+        "key": "choiceCount",
+        "value": 50,
+        "operator": "gte"
+      }
+    },
+    {
+      "id": "storyteller",
+      "name": "說書人",
+      "description": "完成 20 個對話回合",
+      "condition": {
+        "type": "counter",
+        "key": "turnCount",
+        "value": 20,
+        "operator": "gte"
+      }
+    },
+    {
+      "id": "marathon",
+      "name": "馬拉松",
+      "description": "完成 100 個對話回合",
+      "condition": {
+        "type": "counter",
+        "key": "turnCount",
+        "value": 100,
+        "operator": "gte"
+      }
+    },
+    {
+      "id": "awakening_witnessed",
+      "name": "見證覺醒",
+      "description": "觸發覺醒場景",
+      "condition": {
+        "type": "story_progress",
+        "key": "currentScene",
+        "value": "awakening"
+      }
+    },
+    {
+      "id": "void_explorer",
+      "name": "虛空探索者",
+      "description": "觸發虛空裂縫場景",
+      "condition": {
+        "type": "story_progress",
+        "key": "currentScene",
+        "value": "void_rift"
+      }
+    },
+    {
+      "id": "brave_fighter",
+      "name": "勇敢的戰士",
+      "description": "觸發戰鬥場景",
+      "condition": {
+        "type": "story_progress",
+        "key": "currentScene",
+        "value": "battle"
+      }
+    }
+  ],
+
+  "_notes": {
+    "使用說明": "這是成就系統的定義檔案，你可以根據自己的遊戲內容添加或修改成就。",
+    "條件類型說明": {
+      "counter": "計數器類型 - 檢查 gameState 中的數值是否達到目標",
+      "flag": "標記類型 - 檢查 gameState.flags 中的布林值",
+      "choice": "選擇類型 - 檢查玩家是否做出特定選擇",
+      "story_progress": "劇情進度類型 - 檢查是否到達特定場景"
+    },
+    "運算子說明": {
+      "eq": "等於 (equal)",
+      "gt": "大於 (greater than)",
+      "gte": "大於等於 (greater than or equal)",
+      "lt": "小於 (less than)",
+      "lte": "小於等於 (less than or equal)"
+    },
+    "添加自訂成就": [
+      "複製現有成就的格式",
+      "修改 id（唯一標識符）",
+      "修改 name 和 description",
+      "根據需要設定 condition",
+      "確保 condition 中的 key 在 gameState 中存在"
+    ],
+    "範例 - 添加基於標記的成就": {
+      "id": "secret_found",
+      "name": "發現秘密",
+      "description": "找到隱藏的秘密",
+      "condition": {
+        "type": "flag",
+        "key": "foundSecret",
+        "value": true
+      },
+      "說明": "需要在遊戲中設定 gameState.flags.foundSecret = true"
+    }
+  }
+}
